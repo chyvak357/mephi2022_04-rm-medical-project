@@ -1,0 +1,503 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+li {
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: Verdana, Arial, sans-serif;
+    background-color: #f7f7f7;
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-attachment: scroll;
+
+
+}
+
+
+#header {
+    /*opacity: 0.5;*/
+    background-image: -webkit-linear-gradient(cornflowerblue, #191938);
+    /*background-color: #4d9db5;*/
+}
+
+#header h1 {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 30px 30px 30px 10px;
+    clear: none;
+}
+
+#nav {
+    /*background-color: #191938;*/
+    /*border-top: 1px solid #ccc;*/
+    border-bottom: 10px solid #ccc;
+}
+
+#nav li {
+    display: inline;
+    float: right;
+    list-style: none;
+}
+
+#nav a {
+    display: inline-block;
+    color: navajowhite;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+#nav li:first-child a {
+    border-right: 1px solid #ccc;
+}
+
+#nav li:last-child a {
+    border-left: 1px solid #ccc;
+}
+
+#nav a:hover {
+    font-weight: bold;
+}
+
+#nav:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+
+
+
+
+
+/*Основной блок, что влкюяает в себя остальные. определяет светлую подложку*/
+.wrapper {
+    background-color: rgba(247, 247, 247, 0.5);
+}
+
+/*----------Стили 3х блоков в ряд -------*/
+
+#th_block {
+
+    background-image: -webkit-linear-gradient(rgba(247, 247, 247, 0) 50%, rgba(247, 247, 247, 0.5));
+
+    background-color: rgba(247, 247, 247, 0);
+
+    /*margin-bottom: 30px;*/
+    height: 300px;
+    width: 100%;
+    /*border-top: 6px solid #ccc;*!*/
+}
+
+#th_block p {
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.th_block {
+    font-size: large;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 10px;
+    float: left;
+    width: 20%;
+    height: 270px;
+    margin-right: 10%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.th_block:first-child {
+    margin-left: 10%;
+}
+
+/*----------Конец блоков в ряд -------*/
+
+
+
+
+
+
+/*----------Стили Слайдера -------*/
+.slider {
+    background-color: #ddd;
+    height: inherit;
+    overflow: hidden;
+    position: relative;
+    width: inherit;
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+
+}
+
+.slide_div {
+    height: 350px;
+    margin: 0 auto 50px auto;
+    position: relative;
+    width: 700px;
+}
+
+.slide_div>input {
+    display: none;
+}
+
+.slides {
+    height: inherit;
+    opacity: 0;
+    position: absolute;
+    width: inherit;
+    z-index: 0;
+    -webkit-transform: scale(1.5);
+    -webkit-transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+.slide1 {
+    background-image: url(https://user32265.clients-cdnnow.ru/originalStorage/post/4d/99/19/ef/4d9919ef.jpg);
+}
+
+.slide2 {
+    background-image: url(https://prprel.ru/wp-content/uploads/2018/06/a203235b5c0781a3ecc6824081cb17f5.jpg);
+}
+
+.slide3 {
+    background-image: url(https://tla-ab4d.kxcdn.com/wp-content/uploads/2015/12/Humour-in-Marketing.png);
+}
+
+.slide4 {
+    background-image: url(https://irorio.jp/wp-content/images/uploads/2014/02/Bfq2ucgIgAAUSXQ1.jpg);
+}
+
+.slide5 {
+    background-image: url(https://cs7.pikabu.ru/post_img/2018/11/24/9/1543071845175388219.png);
+}
+
+.slide_div .controls {
+    left: 50%;
+    margin-left: -98px;
+    position: absolute;
+}
+
+.slide_div label {
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    margin: 12px 12px 12px 12px;
+    position: relative;
+    -webkit-border-radius: 50%;
+    -webkit-transition: background ease-in-out .5s;
+}
+
+.slide_div label:after {
+    border: 2px solid #205f90;
+    content: " ";
+    display: block;
+    height: 20px;
+    width: 20px;
+    left: -5px;
+    position: absolute;
+    top: -5px;
+    -webkit-border-radius: 50%;
+}
+
+.slide_div label:hover,
+#slide1:checked~.controls label:nth-of-type(1),
+#slide2:checked~.controls label:nth-of-type(2),
+#slide3:checked~.controls label:nth-of-type(3),
+#slide4:checked~.controls label:nth-of-type(4),
+#slide5:checked~.controls label:nth-of-type(5) {
+    background: #2b97e2;
+}
+
+#slide1:checked~.slider>.slide1,
+#slide2:checked~.slider>.slide2,
+#slide3:checked~.slider>.slide3,
+#slide4:checked~.slider>.slide4,
+#slide5:checked~.slider>.slide5 {
+    opacity: 1;
+    z-index: 1;
+    -webkit-transform: scale(1);
+}
+
+
+/* ------------Конец слайдов---------*/
+
+
+
+
+
+
+/*----------Стили боковой панели-------*/
+.aside h2 {
+    font-size: 0.95em;
+    margin-top: 15px;
+}
+
+.aside h3 {
+    font-size: 0.85em;
+    margin-top: 10px;
+}
+
+.aside p,
+.aside li {
+    font-size: .75em;
+    margin-top: 10px;
+}
+
+.aside li {
+    list-style-type: none;
+}
+
+#sidebar1 {
+    float: left;
+    width: 20%;
+    padding: 0 10px 0 1px;
+    margin: 3px;
+}
+
+/* ------------Конец боковой панели---------*/
+
+
+
+
+
+/*----------Стили Основной части -------*/
+
+#article {
+    background-color: rgba(247, 247, 247, 0.5);
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 15px;
+    width: 80%;
+}
+
+#article_main {
+    background-color: rgba(247, 247, 247, 0.5);
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    /*margin-left: 20%;*/
+    /*margin-right: 20%;*/
+    padding: 15px;
+    /*width: 80%;*/
+}
+
+#article:after {
+    clear: both;
+    display: table;
+    content: '';
+}
+
+#article h2 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+#article p {
+    line-height: 150%;
+    margin-bottom: 15px;
+}
+
+/* ------------Конец Основной части ---------*/
+
+
+
+
+/*----------Стили Футера панели-------*/
+
+#footer {
+    /*border-top: 1px solid #ccc;*/
+    font-size: .8em;
+    text-align: center;
+    padding: 10px 10px 30px 10px;
+}
+
+#nav ul,
+#header h1,
+.wrapper,
+#footer p {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wrapper,
+#nav,
+#header,
+#footer {
+    min-width: 768px;
+}
+
+/* ------------Конец Футера---------*/
+
+/* ------------Начало окна регистрации ---------*/
+
+#login_block {
+
+    margin: 10px;
+    width: inherit;
+    height: auto;
+
+}
+
+/* ------------Конец окна регистрации---------*/
+
+
+/* ------------Начало окна авторизированного пользователя ---------*/
+
+#auth_user {
+    margin: 10px;
+    width: inherit;
+    height: auto;
+
+}
+
+#auth_user img {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    border: 1px solid #996a6a;
+}
+
+
+#auth_user p {
+    font-size: medium;
+}
+
+/* ------------Конец окна пользователя---------*/
+
+
+
+/*-------------Три блока на выборе врача--------*/
+
+#schedule {
+    /*border: 1px solid black;*/
+    width: 100%;
+    height: 500px;
+}
+
+
+.schedule {
+    /*border: 2px solid #38312e;*/
+    height: inherit;
+    width: 31.65%;
+    float: left;
+    margin-right: 2.5%;
+    padding: 5px;
+}
+
+
+.schedule p {
+    color: #191938;
+    font-size: large;
+    text-align: center;
+    margin: 5px;
+    text-decoration: underline #191938;
+}
+
+
+/*-------------конец Три блока на выборе врача--------*/
+
+
+
+/*-------------начало Таблицы --------*/
+/*.schedule  */
+select {
+    background-color: rgba(247, 247, 247, 0.3);
+    font-size: medium;
+    margin-top: 20px;
+    padding: 5px;
+    float: left;
+    width: 100%;
+    height: inherit;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-y: auto;
+    border: 0px;
+}
+
+/*.schedule */
+input[type="submit"] {
+    border: 1px solid #205f90;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background: #ffffff !important;
+    outline: none;
+    height: auto;
+    width: auto;
+    font-size: large;
+}
+
+/*.schedule */
+input[type="submit"]:hover {
+    color: #205f90;
+    cursor: pointer;
+    border: 1px solid #38312e
+}
+
+/*.schedule */
+option {
+    border-bottom: 1px dashed #2b97e2;
+}
+
+/*.schedule */
+option:hover {
+    font-size: large;
+}
+
+.schedule:last-child {
+    margin-right: 0;
+}
+
+
+table {
+    font-size: 14px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+
+th,
+td {
+    padding: 10px 10px;
+    background: #AFCDE7;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+
+td {
+    background: #D8E6F3;
+}
+
+th:first-child,
+td:first-child {
+    text-align: left;
+}
+
+/*----------Конец таблц -------*/
